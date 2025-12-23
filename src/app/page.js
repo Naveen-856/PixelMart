@@ -63,19 +63,29 @@ export default async function Home({ searchParams }) {
         </div>
       </section>
 
+      {resolvedSearchParams.success === "true" && (
+        <div className="max-w-4xl mx-auto px-4 mb-12">
+          <div className="bg-green-100 border-2 border-green-300 rounded-2xl p-8 text-center">
+            <p className="text-3xl font-bold text-green-800">
+              Payment Successful! 🎉
+            </p>
+            <p className="text-xl text-green-700 mt-4">
+              Your product is ready for download.
+            </p>
+          </div>
+        </div>
+      )}
+
       {resolvedSearchParams.package_success === "true" && (
-        <div className="max-w-4xl mx-auto px-4 mb-12 text-center">
-          <div className="bg-green-100 border-2 border-green-300 rounded-2xl p-8">
-            <p className="text-3xl font-bold text-green-800 mb-4">
-              Congratulations! You're now a seller! 🎉
+        <div className="max-w-4xl mx-auto px-4 mb-12">
+          <div className="bg-green-100 border-2 border-green-300 rounded-2xl p-8 text-center">
+            <p className="text-3xl font-bold text-green-800">
+              Welcome, Seller! 🎉
             </p>
-            <p className="text-xl text-green-700 mb-6">
-              You can start uploading and selling your digital products.
+            <p className="text-xl text-green-700 mt-4">
+              You can now upload and sell products.
             </p>
-            <Link
-              href="/sell"
-              className="inline-block bg-indigo-600 text-white px-10 py-4 rounded-full font-bold text-xl hover:bg-indigo-700 transition"
-            >
+            <Link href="/sell" className="inline-block mt-6 bg-indigo-600 text-white px-8 py-4 rounded-full font-bold">
               Upload Your First Product
             </Link>
           </div>
